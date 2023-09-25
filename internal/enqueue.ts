@@ -1,9 +1,9 @@
 import { wmill } from "../deps.ts"
-import { Message } from "../types.ts";
+import { MessageWithMeta } from "../producer.ts";
 
 export let enqueueService = 'f/_queue/enqueue'
 
-export async function enqueueMessages(queue: string, messages: Message[]) {
+export async function enqueueMessages(queue: string, messages: MessageWithMeta[]) {
   return await wmill.JobService.runWaitResultScriptByPath({
     workspace: Deno.env.get('WM_WORKSPACE')!,
     path: enqueueService,

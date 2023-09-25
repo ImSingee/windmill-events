@@ -1,15 +1,4 @@
-import { wmill } from "./deps.ts"
-import { Message } from "./types.ts";
+import * as Producer from "./producer.ts"
+import * as Consumer from "./consumer.ts"
 
-export async function enqueue(queuePath: string, messages: Message[]) {
-  return await wmill.JobService.runScriptByPath({
-    workspace: Deno.env.get('WM_WORKSPACE')!,
-    path: queuePath,
-    requestBody: {
-      messages,
-    },
-    parentJob: Deno.env.get('WM_JOB_ID')
-  })
-}
-
-export * from "./types.ts"
+export { Producer, Consumer }
