@@ -11,9 +11,9 @@ await build({
   },
   package: {
     // package.json properties
-    name: "windmill-queue",
+    name: "windmill-events",
     version: Deno.args[0],
-    description: "Queue for windmill",
+    description: "events queue for windmill",
     license: "MIT",
     repository: {
       type: "git",
