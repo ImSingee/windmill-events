@@ -1,4 +1,4 @@
-import * as wmill from "npm:windmill-client@1"
+import { wmill } from "../deps.ts"
 import { Message } from "../types.ts";
 
 export let enqueueService = 'f/_queue/enqueue'

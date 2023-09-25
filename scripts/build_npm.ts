@@ -9,6 +9,9 @@ await build({
     // see JS docs for overview and more options
     deno: true,
   },
+  compilerOptions: {
+    lib: ['ES6', 'DOM']
+  },
   package: {
     // package.json properties
     name: "windmill-events",

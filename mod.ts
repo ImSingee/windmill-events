@@ -1,4 +1,4 @@
-import * as wmill from "npm:windmill-client@1"
+import { wmill } from "./deps.ts"
 import { Message } from "./types.ts";
 
 export async function enqueue(queuePath: string, messages: Message[]) {
@@ -11,3 +11,5 @@ export async function enqueue(queuePath: string, messages: Message[]) {
     parentJob: Deno.env.get('WM_JOB_ID')
   })
 }
+
+export * from "./types.ts"
