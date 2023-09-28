@@ -19,7 +19,7 @@ export async function enqueue(queuePath: string, messages: MessageWithMeta[]) {
     path: queuePath,
     requestBody: {
       messages,
+      parentJob: Deno.env.get('WM_JOB_ID'),
     },
-    parentJob: Deno.env.get('WM_JOB_ID')
   })
 }
